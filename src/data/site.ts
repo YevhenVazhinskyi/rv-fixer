@@ -9,7 +9,7 @@ export const site = {
     "Mobile RV repair in King & Snohomish County. $80 call near Seattle, $120 in both counties. Over 40 mi from Seattle: +$3/mi. Labor $120/hr after you approve.",
   phone: "(206) 280-6910",
   phoneRaw: "+12062806910",
-  email: "hello@rvfixer.com",
+  email: "crestivate@rvfixerwa.com",
   city: "Seattle",
   counties: ["King County", "Snohomish County"],
   region: "King County & Snohomish County, WA",
