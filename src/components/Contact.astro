@@ -1,0 +1,114 @@
+---
+import { site, ui } from "../data/site";
+import AppointmentPicker from "./AppointmentPicker.astro";
+import FormIcon from "./icons/FormIcon.astro";
+---
+
+<section id="contact" class="relative py-16 md:py-24 overflow-hidden">
+  <div
+    class="absolute inset-0 bg-cover bg-center grayscale opacity-30 scale-105"
+    style="background-image: url('https://images.unsplash.com/photo-1619642751034-765df43d7740?w=1920&q=70&auto=format&fit=crop');"
+    aria-hidden="true"
+  ></div>
+  <div class="absolute inset-0 bg-white/88" aria-hidden="true"></div>
+
+  <div class="relative max-w-xl mx-auto px-4 sm:px-6 w-full">
+    <header class="text-center mb-10">
+      <div class="flex flex-col items-center gap-2 mb-4">
+        <FormIcon class="w-10 h-10 text-brand-600" />
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold italic text-violet-950">
+          {ui.contact.formTitle}
+        </h2>
+        <p class="text-brand-700 font-medium text-base">{ui.contact.formSubtitle}</p>
+      </div>
+      <p class="text-slate-700 text-base sm:text-lg mb-4">
+        {ui.contact.serviceAreaPrefix} {site.region}
+      </p>
+      <p class="text-slate-800 text-sm sm:text-base mb-6">
+        <a href={`mailto:${site.email}`} class="hover:text-brand-600 transition-colors">{site.email}</a>
+        <span class="mx-2 text-slate-400">|</span>
+        <a href={`tel:${site.phoneRaw}`} class="hover:text-brand-600 transition-colors">{site.phone}</a>
+      </p>
+    </header>
+
+    <form action={site.formAction} method="POST" enctype="multipart/form-data" class="space-y-4">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder={ui.contact.name}
+        required
+        class="w-full px-5 py-4 bg-white text-slate-800 placeholder:text-slate-500 shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-brand-500"
+      />
+
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder={ui.contact.email}
+        required
+        class="w-full px-5 py-4 bg-white text-slate-800 placeholder:text-slate-500 shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-brand-500"
+      />
+
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder={ui.contact.phone}
+        required
+        class="w-full px-5 py-4 bg-white text-slate-800 placeholder:text-slate-500 shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-brand-500"
+      />
+
+      <input
+        type="text"
+        id="rv-year-make-model"
+        name="rv_year_make_model"
+        placeholder={ui.contact.rvYearMakeModel}
+        required
+        class="w-full px-5 py-4 bg-white text-slate-800 placeholder:text-slate-500 shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-brand-500"
+      />
+
+      <input
+        type="text"
+        id="city"
+        name="city"
+        placeholder={ui.contact.city}
+        required
+        class="w-full px-5 py-4 bg-white text-slate-800 placeholder:text-slate-500 shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-brand-500"
+      />
+
+      <div>
+        <label for="message" class="block text-left text-slate-800 font-medium mb-2 pl-1">
+          {ui.contact.serviceDescription}
+        </label>
+        <p class="text-left text-sm text-slate-600 mb-3">{ui.contact.problemNote}</p>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder={ui.contact.messagePlaceholder}
+          required
+          class="w-full px-5 py-4 bg-white text-slate-800 placeholder:text-slate-500 shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-brand-500 resize-y min-h-[160px]"
+        ></textarea>
+        <label for="photos" class="sr-only">{ui.contact.photosLabel}</label>
+        <input
+          type="file"
+          id="photos"
+          name="photos"
+          accept="image/*,video/*"
+          multiple
+          class="w-full mt-3 text-sm text-slate-700 file:mr-4 file:py-3 file:px-4 file:rounded-lg file:border-0 file:bg-slate-900 file:text-white file:font-semibold hover:file:bg-slate-800 file:cursor-pointer"
+        />
+      </div>
+
+      <AppointmentPicker />
+
+      <button
+        type="submit"
+        class="w-full py-4 mt-2 text-lg font-semibold text-white bg-black hover:bg-slate-800 transition-colors"
+      >
+        {ui.contact.submit}
+      </button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import { site, ui } from "../data/site";
+---
+
+<footer class="py-10 bg-slate-950 text-slate-400 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="flex items-center gap-4">
+      <img
+        src={site.logo}
+        alt={site.name}
+        class="h-16 w-auto rounded-lg bg-white object-contain"
+        width="80"
+        height="64"
+        loading="lazy"
+      />
+      <div>
+        <p class="font-display text-lg font-bold text-white">{site.shortName}</p>
+        <p class="text-sm text-slate-500">{site.legalName}</p>
+        <p class="text-sm mt-1">
+          {ui.footer.serving} {site.region}
+        </p>
+      </div>
+    </div>
+    <div class="text-sm space-y-1 md:text-right">
+      <a href={`tel:${site.phoneRaw}`} class="block hover:text-brand-400 transition-colors">
+        {site.phone}
+      </a>
+      <a href={`mailto:${site.email}`} class="block hover:text-brand-400 transition-colors">
+        {site.email}
+      </a>
+    </div>
+  </div>
+</footer>

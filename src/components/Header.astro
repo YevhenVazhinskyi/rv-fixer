@@ -1,0 +1,106 @@
+---
+import { site, navLinks, ui } from "../data/site";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 md:h-[4.5rem]">
+      <a href="#" class="flex items-center gap-3 group">
+        <img
+          src={site.logo}
+          alt={`${site.shortName} — ${site.legalName}`}
+          class="h-11 md:h-12 w-auto rounded-lg bg-white object-contain group-hover:opacity-90 transition-opacity"
+          width="120"
+          height="48"
+        />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Main navigation">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-sm font-medium text-slate-300 hover:text-brand-400 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline text-sm font-medium text-slate-400">{site.ownerName}</span>
+        <a
+          href={`tel:${site.phoneRaw}`}
+          class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-950 bg-brand-400 rounded-lg hover:bg-brand-300 transition-colors"
+        >
+          {ui.nav.cta}
+        </a>
+
+        <button
+          id="menu-toggle"
+          type="button"
+          class="lg:hidden p-2 text-slate-200 hover:text-brand-400"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-slate-950">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-nav-link px-3 py-3 text-base font-medium text-slate-200 hover:text-brand-400 hover:bg-white/5 rounded-lg transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={`tel:${site.phoneRaw}`}
+        class="mt-2 inline-flex justify-center px-4 py-3 text-sm font-semibold text-slate-950 bg-brand-400 rounded-lg hover:bg-brand-300 transition-colors"
+      >
+        {ui.nav.cta} · {site.ownerName} · {site.phone}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+  const navLinks = document.querySelectorAll(".mobile-nav-link");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = !menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden", !isOpen);
+    iconClose?.classList.toggle("hidden", isOpen);
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menu?.classList.add("hidden");
+      iconOpen?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+      toggle?.setAttribute("aria-label", "Open menu");
+    });
+  });
+</script>
