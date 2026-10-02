@@ -18,10 +18,10 @@ const jsonLd = {
   name: site.name,
   legalName: site.legalName,
   description: site.description,
-  image: site.logo,
+  image: new URL(site.logo, site.url).href,
   telephone: site.phoneRaw,
   email: site.email,
-  url: Astro.url.origin,
+  url: site.url,
   areaServed: site.region,
   serviceType: "Mobile RV Repair",
   priceRange: "$$",
@@ -34,6 +34,8 @@ const jsonLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={site.url} />
+    <meta property="og:url" content={site.url} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/png" href={site.logo} />
     <link rel="apple-touch-icon" href={site.logo} />

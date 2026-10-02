@@ -10,6 +10,7 @@ export const site = {
   phone: "(206) 280-6910",
   phoneRaw: "+12062806910",
   email: "crestivate@rvfixerwa.com",
+  url: "https://rvfixerwa.com",
   city: "Seattle",
   counties: ["King County", "Snohomish County"],
   region: "King County & Snohomish County, WA",
