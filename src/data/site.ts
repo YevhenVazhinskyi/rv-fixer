@@ -41,7 +41,8 @@ export const ui = {
     about: "About",
     reviews: "Reviews",
     contact: "Contact",
-    cta: "Call Now",
+    cta: "Service Request",
+    ctaHref: "#contact",
   },
   hero: {
     ctaFormTitle: "Service Request Form",
