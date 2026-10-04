@@ -88,9 +88,8 @@ export const ui = {
     city: "City RV is located",
     serviceDescription: "What's the problem?",
     problemNote:
-      "Describe the issue in detail and attach photos or video if you can — it helps us prepare your pre-estimate.",
+      "Describe the issue in detail — it helps us prepare your pre-estimate. After you submit, email photos to crestivate@rvfixerwa.com (iPhone photos are too large for this form).",
     messagePlaceholder: "Describe the problem...",
-    photosLabel: "Photos or video (optional)",
     appointmentTitle: "Preferred appointment window",
     appointmentNote:
       "Choose a day on the calendar and a time range that works for you — not an exact clock time. We'll confirm the visit by phone or email.",
