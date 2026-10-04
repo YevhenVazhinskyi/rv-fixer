@@ -25,7 +25,8 @@ export const site = {
   bookingUrl: "#contact",
   googleReviewsUrl:
     "https://www.google.com/maps/place/RV+FIXER/@47.6774662,-122.1777975,17z/data=!3m1!4b1!4m6!3m5!1s0x8911005daa1f7c19:0xb19931826298e48!8m2!3d47.6774662!4d-122.1777975!16s%2Fg%2F11zf693h2w",
-  formAction: "https://formspree.io/f/mbglnevz",
+  formAction: "https://api.web3forms.com/submit",
+  web3formsAccessKey: "38de1670-d080-48ed-9748-9c6dc0839b79",
   serviceCallKingCounty: "$120",
   serviceCallSnohomish: "$120",
   serviceCallNearSeattle: "$80",
@@ -87,8 +88,9 @@ export const ui = {
     city: "City RV is located",
     serviceDescription: "What's the problem?",
     problemNote:
-      "Describe the issue in detail — it helps us prepare your pre-estimate. After you submit, email photos or video to the address above (same subject line as your name).",
+      "Describe the issue in detail and attach photos or video if you can — it helps us prepare your pre-estimate.",
     messagePlaceholder: "Describe the problem...",
+    photosLabel: "Photos or video (optional)",
     appointmentTitle: "Preferred appointment window",
     appointmentNote:
       "Choose a day on the calendar and a time range that works for you — not an exact clock time. We'll confirm the visit by phone or email.",
