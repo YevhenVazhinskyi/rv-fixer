@@ -189,8 +189,8 @@ export const whyUs = [
 export const about = {
   heading: "Your mobile RV technician",
   paragraphs: [
-    `I'm ${site.ownerName}, owner of RV Fixer (Crestivate LLC), a certified mobile RV technician in King and Snohomish County. I have a B.S. in Electronics Engineering and years as an engineer before going full-time on RV work.`,
-    "I repair electrical — 12V, 120V, batteries, solar, generators — and everything else that breaks on the road: plumbing, propane, heat and A/C, appliances, slides, leaks, and diagnostics. Same tech from call to fix; you approve the quote before repairs.",
+    `I'm ${site.ownerName}, owner of RV Fixer, your certified mobile RV technician in King and Snohomish County. I have a Bachelor of Science in Electrical Engineering and spent 5 years as an engineer before going full-time as an RV service tech.`,
+    "I repair plumbing systems, gas systems, and electrical systems. From minor leaks to HVAC repairs and everything in-between, you'll have the same tech from call to finish. Approve the quote before repairs. Enjoy the convenience of having your personal technician arrive when you need them, where you need them. Email for questions and estimates.",
     "Crestivate LLC is fully insured for mobile service.",
   ],
 };
